@@ -14,7 +14,7 @@ class App{
         }
         require_once '../app/controllers/'.$this->controller.'.php';
         $this->controller = new $this->controller;
-        // METHOD
+        // METHOD controller
         if(isset($url[1])){
             if(method_exists($this->controller, $url[1])){
                 $this->method = $url[1];
@@ -24,6 +24,7 @@ class App{
         if(!empty($url)){
             $this->params = array_values($url);
             // var_dump($url);
+            // print_r($this->params);
         }
         // JALANKAN METHOD DAN PARAMS
         call_user_func_array([$this->controller, $this->method], $this->params);
