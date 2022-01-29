@@ -10,8 +10,9 @@
             <a href="<?= BASEURL; ?>/mahasiswa/tambah" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#insertmhs">Tambah Data Mahasiswa</a>
             <ul class="list-group">
                 <?php foreach ($data['mahasiswa'] as $mhs) : ?>
-                    <li class="list-group-item  justify-content-between align-item-center d-flex"><?= $mhs['nama'] ?>
-                        <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id'] ?>" class="badge bg-primary">Detail</a>
+                    <li class="list-group-item"><?= $mhs['nama'] ?>
+                        <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id'] ?>" class="badge bg-danger float-end mr-2" onclick="return confirm('Yakin ta pean?');">Hapus</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id'] ?>" class="badge bg-primary float-end mx-2">Detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
